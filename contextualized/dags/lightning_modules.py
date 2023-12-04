@@ -385,7 +385,7 @@ class NOTMAD(pl.LightningModule):
                 print("Error, couldn't project to dag. Returning normal predictions.")
         return trim_params(w_preds, thresh=kwargs.get("threshold", 0.0))
 
-    def training_epoch_end(self, training_step_outputs, logs=None):
+    def on_train_epoch_end(self, training_step_outputs, logs=None):
         # update alpha/rho based on average end-of-epoch dag loss
         epoch_samples = sum(
             [len(ret["train_batch"][0]) for ret in training_step_outputs]
