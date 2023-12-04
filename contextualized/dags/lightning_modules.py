@@ -2,7 +2,7 @@ import numpy as np
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
-import pytorch_lightning as pl
+import lightning.pytorch as pl
 from contextualized.functions import identity_link
 from contextualized.dags.graph_utils import (
     project_to_dag_torch,
