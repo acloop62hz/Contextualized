@@ -4,7 +4,7 @@ Unit tests for DAG models.
 import unittest
 import numpy as np
 import igraph as ig
-from pytorch_lightning import seed_everything
+from lightning.pytorch import seed_everything
 
 
 from contextualized.dags.lightning_modules import NOTMAD
