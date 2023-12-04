@@ -3,10 +3,10 @@ import torch
 from contextualized.dags.graph_utils import dag_pred, dag_pred_with_factors
 
 
-def dag_loss_dagma_indiv(w, s=1，device = 'cuda'):
-    w = w.to(device)
-    M = s * torch.eye(w.shape[-1],device=device) - w * w
-    return w.shape[-1] * np.log(torch.tensor(s, device=device)) - torch.slogdet(M)[1]
+def dag_loss_dagma_indiv(w, s=1):
+    w = w.to('cuda')
+    M = s * torch.eye(w.shape[-1],device='cuda') - w * w
+    return w.shape[-1] * np.log(torch.tensor(s, device='cuda')) - torch.slogdet(M)[1]
 
 
 def dag_loss_dagma(W, s=1, alpha=0.0, **kwargs):
