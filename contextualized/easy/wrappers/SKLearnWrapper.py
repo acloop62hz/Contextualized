@@ -4,8 +4,8 @@ An sklearn-like wrapper for Contextualized models.
 import copy
 import os
 import numpy as np
-from pytorch_lightning.callbacks.early_stopping import EarlyStopping
-from pytorch_lightning.callbacks import ModelCheckpoint
+from lightning.pytorch.callbacks.early_stopping import EarlyStopping
+from lightning.pytorch.callbacks import ModelCheckpoint
 from sklearn.model_selection import train_test_split
 import torch
 
