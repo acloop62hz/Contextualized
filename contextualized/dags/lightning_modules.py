@@ -116,6 +116,8 @@ class NOTMAD(pl.LightningModule):
         """
         super(NOTMAD, self).__init__()
 
+        self.training_step_outputs = []
+
         # dataset params
         self.context_dim = context_dim
         self.x_dim = x_dim
@@ -285,6 +287,8 @@ class NOTMAD(pl.LightningModule):
                 "train_batch_idx": batch_idx,
             }
         )
+
+        self.training_step_outputs.append(ret)
         return ret
 
     def test_step(self, batch, batch_idx):
@@ -385,7 +389,8 @@ class NOTMAD(pl.LightningModule):
                 print("Error, couldn't project to dag. Returning normal predictions.")
         return trim_params(w_preds, thresh=kwargs.get("threshold", 0.0))
 
-    def training_epoch_end(self, training_step_outputs, logs=None):
+    def on_train_epoch_end(self, logs=None):
+        training_step_outputs = self.training_step_outputs
         # update alpha/rho based on average end-of-epoch dag loss
         epoch_samples = sum(
             [len(ret["train_batch"][0]) for ret in training_step_outputs]
