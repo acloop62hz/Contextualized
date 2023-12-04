@@ -13,7 +13,7 @@ from sklearn.linear_model import LinearRegression
 import torch
 from torch import nn
 from torch.utils.data import DataLoader
-import pytorch_lightning as pl
+import lightning.pytorch as pl
 from contextualized.dags.graph_utils import project_to_dag_torch
 
 
