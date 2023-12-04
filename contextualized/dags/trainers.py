@@ -2,7 +2,7 @@
 PyTorch-Lightning trainers used for Contextualized graphs.
 """
 import torch
-import pytorch_lightning as pl
+import lightning.pytorch as pl
 
 
 class GraphTrainer(pl.Trainer):
