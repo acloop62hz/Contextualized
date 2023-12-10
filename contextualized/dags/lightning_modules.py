@@ -443,7 +443,7 @@ class NOTMAD(pl.LightningModule):
 
         """
         kwargs["num_workers"] = kwargs.get("num_workers", 0)
-        kwargs["batch_size"] = kwargs.get("batch_size", 8)
+        kwargs["batch_size"] = kwargs.get("batch_size", 4)
         dataset = TensorDataset(
             torch.tensor(C, dtype=torch.float),
             torch.tensor(X, dtype=torch.float),
