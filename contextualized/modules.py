@@ -150,7 +150,7 @@ if __name__ == "__main__":
     Y_DIM = 5
     K_ARCHETYPES = 3
     WIDTH = 50
-    LAYERS = 5
+    LAYERS = 3
     X_data = torch.rand((N_SAMPLES, X_DIM))
 
     mlp = MLP(X_DIM, Y_DIM, WIDTH, LAYERS)
