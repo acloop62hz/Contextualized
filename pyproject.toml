@@ -40,4 +40,4 @@ find = {}  # Scanning implicit namespaces is active by default
 
 [project.urls]
 "Homepage" = "https://contextualized.ml/"
-"Source" = "https://github.com/cnellington/Contextualized/"
+"Source" = "https://github.com/acloop62hz/Contextualized/"
