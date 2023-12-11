@@ -107,7 +107,7 @@ class NOTEARS(pl.LightningModule):
         self.prev_dag = dag
 
     def dataloader(self, X, **kwargs):
-        kwargs["batch_size"] = kwargs.get("batch_size", 4)
+        kwargs["batch_size"] = kwargs.get("batch_size", 32)
         X_tensor = torch.Tensor(X).to(torch.float32)
         return DataLoader(dataset=X_tensor, **kwargs)
 
